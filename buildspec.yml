@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-       nodejs: 16 # Use a specific Node.js version compatible with Angular
+      nodejs: 16 # Use a specific Node.js version compatible with Angular
     commands:
       - echo "installing something"
   pre_build:
@@ -12,7 +12,7 @@ phases:
     commands:
       - echo "we are in the build block"
       - echo "we will run some tests"
-      - grep -Fq "Congratulations" index.html
+      - Select-String -Pattern "Congratulations" -Path index.html > $null
   post_build:
     commands:
       - echo "we are in the post build phase"
